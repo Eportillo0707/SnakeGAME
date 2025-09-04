@@ -58,7 +58,7 @@ public class Snake : MonoBehaviour
 
     private void Grow()
     {
-        Console.Write("Puto el que lo lea");
+        
         Transform segment = Instantiate(segmentPrefab);
         segment.position = segments[segments.Count - 1].position;
         segments.Add(segment);
@@ -68,9 +68,8 @@ public class Snake : MonoBehaviour
     {
         if (collision.tag == "Food")
         {
-            Grow();
-            Debug.Log("SEXO ANAL");
-            //collision.GetComponent<Food>().RandomizePosition();
+            Grow();            
+            collision.GetComponent<Food>().RandomizePosition();
         }
     }
 }
